@@ -37,6 +37,12 @@ python3 ./text_modality/train_text.py
 
 ## Zero-shot Speech Emotion Recognition
 
+- The overall zero-shot SER experiments are conducted under s3prl infrastructure, please well install it before you run the code
+- s3prl installation reference: https://github.com/s3prl/s3prl
+- create a `zero_shot_emotion` folder under `./s3prl/s3prl/downstream`
+- clone all files in `speech_modality` to `./s3prl/s3prl/downstream/zero_shot_emotion`
+
 ```
-python3 ./speech_modality/train_speech.py
+cd ./s3prl/s3prl
+python3 run_downstream.py -m train -n $EXP_NAME -u data2vec -d zero_shot_emotion -c downstream/zero_shot_emotion/config.yaml
 ```
